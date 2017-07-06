@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPIRNG//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+    <bean id="triangle" class="com.training.springframe.Triangle">
+    	<!-- 1 uses the setter of the field type to set value --> 
+    	<!-- <property name="type" value="Equilateral" />  -->
+    	
+    	<!-- 2 uses the constructor to set value to type --> 
+    	<!-- ffg 2 args will call the constructor with 2 params --> 
+    	<!-- <constructor-arg value="Equilateral" /> -->
+    	<!-- <constructor-arg value="20" /> -->
+    	<!-- automatically converted to int since the constructor has int height -->
+    	 
+    	<!-- 3 data type can be added to be safe and call the desired constructor -->
+    	<!-- 
+    	<constructor-arg type="java.lang.String" value="20" /> will call cons with 1 String param
+    	<constructor-arg type="int" value="20" /> will call cons with 1 int param -->
+    	 
+    	<!-- 4 or index can be used index="idxNo" -->
+		<constructor-arg index="0" value="Equilateral" /> 
+    	<constructor-arg index="1" value="20" />
+    </bean>
+    
+  
+   
+    
+</beans>

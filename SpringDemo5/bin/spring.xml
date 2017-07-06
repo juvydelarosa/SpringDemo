@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPIRNG//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+    <!-- AUTOWIRE byName, byType (class type), constructor, off (default) -->
+    <!-- byType and constructor will only work for unique class type  -->
+     <!-- BEAN SCOPES "singleton" or "prototype" -->
+    <bean id="triangle" class="com.training.springframe.Triangle" autowire="constructor" scope="singleton" />
+    
+    
+    <!-- autowire by name same id as the members in Class Triangle -->
+    <bean id="pointA" class="com.training.springframe.Point" >
+        <property name="x" value="0" />
+        <property name="y" value="0" />
+    </bean>
+    
+    <bean id="pointB" class="com.training.springframe.Point" >
+        <property name="x" value="-20" />
+        <property name="y" value="0" />
+    </bean>
+    
+    <bean id="pointC" class="com.training.springframe.Point" >
+        <property name="x" value="20" />
+        <property name="y" value="0" />
+    </bean>
+   
+    
+</beans>

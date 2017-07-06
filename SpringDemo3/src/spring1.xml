@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPIRNG//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+    <bean id="triangle" class="com.training.springframe.Triangle" name="triangle-name">
+      
+    	<!-- set Triangle member that is object use ref to the bean of object -->
+    	<!-- <property name="pointA" ref="zeroPoint" /> ref looks at id, name and alias -->
+    	<!-- alternative ref to zeroPoint will look at ids only -->
+    	<property name="pointA" >
+    		<idref="zeroPoint" />
+    	</property>
+    	
+    	<!-- use inner beans, no ref to point2, no id in point2 -->
+    	<property name="pointB" >
+    		<bean class="com.training.springframe.Point" >
+		        <property name="x" value="-20" />
+		        <property name="y" value="0" />
+		    </bean>
+    	</property>
+    	
+    	<property name="pointC">
+    		<bean class="com.training.springframe.Point" >
+		        <property name="x" value="20" />
+		        <property name="y" value="0" />
+		    </bean>
+    	</property>	
+    </bean>
+    
+    <!-- Object Injection -->
+    <bean id="zeroPoint" class="com.training.springframe.Point" >
+        <property name="x" value="0" />
+        <property name="y" value="0" />
+    </bean>
+    
+    <!-- can be moved inside the triangle bean as inner bean
+    <bean id="point2" class="com.training.springframe.Point" >
+        <property name="x" value="-20" />
+        <property name="y" value="0" />
+    </bean>
+    
+    <bean id="point3" class="com.training.springframe.Point" >
+        <property name="x" value="20" />
+        <property name="y" value="0" />
+    </bean>
+    -->
+    
+    <!-- alternative reference by drawingApp to bean triangle, triangle-name can also be used -->
+    <alias name="triangle" alias="triangle-alias" /> 
+</beans>
