@@ -18,7 +18,7 @@ public class Triangle {
 	}
 	
 	public void draw(){
-		System.out.println(getType() + " Triangle drawn of height " + getHeight());
+		System.out.println(getType() + " Triangle drawn of height of " + getHeight());
 	}
 	
 	public String getType() {
