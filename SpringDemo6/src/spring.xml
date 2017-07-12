@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPIRNG//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<!-- Bean Definition Inheritance (like Java Inheritance but only involves bean definitions only) -->
+	 <bean id="parentTriangle" class="com.training.springframe.Triangle">
+    	<property name="pointA" ref="zeroPoint"/>
+    </bean>
+
+    <bean id="triangle1" class="com.training.springframe.Triangle" parent="parentTriangle">
+    	<!-- will inherit pointA, therefore will have 3 points upon run -->
+    	<property name="pointB" ref="point2"/>
+    	<property name="pointC" ref="point3"/>
+    </bean>
+    
+     <bean id="triangle2" class="com.training.springframe.Triangle" parent="parentTriangle">
+    	<!-- will inherit pointA, therefore will have 2 points upon run, and 3rd point will be empty and throw err -->
+    	<property name="pointB" ref="point2"/>
+    </bean>
+    
+    
+    <!-- Object Injection -->
+    <bean id="zeroPoint" class="com.training.springframe.Point" >
+        <property name="x" value="0" />
+        <property name="y" value="0" />
+    </bean>
+    
+    <bean id="point2" class="com.training.springframe.Point" >
+        <property name="x" value="-20" />
+        <property name="y" value="0" />
+    </bean>
+    
+    <bean id="point3" class="com.training.springframe.Point" >
+        <property name="x" value="20" />
+        <property name="y" value="0" />
+    </bean>
+   
+    
+</beans>
