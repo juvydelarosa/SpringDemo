@@ -2,13 +2,23 @@
 <!DOCTYPE beans PUBLIC "-//SPIRNG//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
 <beans>
-    <!-- AUTOWIRE byName, byType (class type), constructor, off (default) -->
+    <!-- AUTOWIRE byName, off (default; manual wiring and property definition) -->
+	<!-- byType (class type, will not work for many members with same datatype), --> 
+	<!-- constructor (have 3 POint beans, will look for constructor with 3 Point params) -->  
     <!-- byType and constructor will only work for unique class type  -->
-     <!-- BEAN SCOPES "singleton" or "prototype" -->
-    <bean id="triangle" class="com.training.springframe.Triangle" autowire="constructor" scope="singleton" />
+    <!-- autowiring is not a good practice, go explicit wiring -->
+    
+    <!-- BEAN SCOPES "singleton" (default)- creates one bean per bean def regardless the times getbean was called across many classes or -->
+    <!-- BEAN SCOPES "prototype" - new bean created w/ every getBean request  -->
+    <!-- (Triangle getBean "zeroPoint" and Circle getBean "zeroPoint" are different bean instance) -->
+     <!-- "request" - new bean per servlet request -->
+     <!-- "session" - new bean per session -->
+     <!-- "global session" - new bean per global HTTP session (portlet context) -->
+     
+   <bean id="triangle" class="com.training.springframe.Triangle" autowire="constructor" scope="singleton"  /> <!-- scope="singleton"  redundant -->
     
     
-    <!-- autowire by name same id as the members in Class Triangle -->
+    <!-- autowire byName same id as the members in Class Triangle -->
     <bean id="pointA" class="com.training.springframe.Point" >
         <property name="x" value="0" />
         <property name="y" value="0" />

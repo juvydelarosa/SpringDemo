@@ -3,6 +3,7 @@
 
 <beans>
     <bean id="triangle" class="com.training.springframe.Triangle">
+    	<!-- note the use of ref= instead of value = since this is an obj injection -->
     	<property name="pointA" ref="zeroPoint"/>
     	<property name="pointB" ref="point2"/>
     	<property name="pointC" ref="point3"/>

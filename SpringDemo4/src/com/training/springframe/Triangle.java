@@ -3,6 +3,7 @@ package com.training.springframe;
 import java.util.List;
 
 public class Triangle {
+	//points are represented as a List
 	private List<Point> points;
 	
 	public List<Point> getPoints() {

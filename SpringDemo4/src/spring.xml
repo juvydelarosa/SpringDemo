@@ -3,9 +3,11 @@
 
 <beans>
     <bean id="triangle" class="com.training.springframe.Triangle">
+    	<!-- in contrast to demo2 where each Point has own property (separate variables) -->
+    	<!-- if there is a collection (ie list, maps) -->
     	<property name="points">
     	    <list>
-    	        <ref bean="zeroPoint" />
+    	        <ref bean="zeroPoint" /> <!-- type conversion happens, ref will be converted to Point -->
     	        <ref bean="point2" />
     	        <ref bean="point3" />
     	    </list>
