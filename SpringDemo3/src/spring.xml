@@ -10,8 +10,8 @@
     	 <property name="pointA" ref="zeroPoint" />
     	<!-- idref to zeroPoint will look at ids only (ie zeroPoint) no name or alias -->
     	<!-- <property name="pointA">
-    		<idref="zeroPoint" />
-    	</property> -->
+	    		<idref="zeroPoint" />
+	    	</property> -->
     	
     	<!-- use inner beans, no ref to point2, no id in point2 -->
     	<property name="pointB" >

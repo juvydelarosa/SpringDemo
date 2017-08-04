@@ -9,6 +9,7 @@ public class Triangle implements ApplicationContextAware, BeanNameAware { //will
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
+	
 	private ApplicationContext context = null;
 	
 	public void draw(){

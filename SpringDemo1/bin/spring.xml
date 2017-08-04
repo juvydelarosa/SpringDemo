@@ -3,7 +3,7 @@
 
 <beans>
     <bean id="triangle" class="com.training.springframe.Triangle">
-    	<!-- 1 uses the setter of the field type to set value --> 
+    	<!-- 1 uses the setter of the field named type to set value --> 
     	<!-- <property name="type" value="Equilateral" />  -->
     	
     	<!-- 2 uses the constructor to set value to type --> 
